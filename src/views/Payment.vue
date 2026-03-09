@@ -1233,18 +1233,36 @@ const providerTypeLabel = (value?: string) => {
 const channelTypeLabel = (value?: string) => {
   const map: Record<string, string> = {
     wechat: t('payment.channelTypes.wechat'),
-    wxpay: t('payment.channelTypes.wxpay'),
+    wxpay: t('payment.channelTypes.wechat'),
     alipay: t('payment.channelTypes.alipay'),
     qqpay: t('payment.channelTypes.qqpay'),
     paypal: t('payment.channelTypes.paypal'),
     stripe: t('payment.channelTypes.stripe'),
     usdt: t('payment.channelTypes.usdt'),
     'usdt-trc20': t('payment.channelTypes.usdtTrc20'),
+    'usdt-erc20': t('payment.channelTypes.usdtErc20'),
+    'usdt-bep20': t('payment.channelTypes.usdtBep20'),
+    'usdt-polygon': t('payment.channelTypes.usdtPolygon'),
+    'usdt-aptos': t('payment.channelTypes.usdtAptos'),
+    'usdt-solana': t('payment.channelTypes.usdtSolana'),
+    'usdt-xlayer': t('payment.channelTypes.usdtXlayer'),
+    'usdt-arbitrum': t('payment.channelTypes.usdtArbitrum'),
+    'usdt-plasma': t('payment.channelTypes.usdtPlasma'),
     'usdc-trc20': t('payment.channelTypes.usdcTrc20'),
+    'usdc-erc20': t('payment.channelTypes.usdcErc20'),
+    'usdc-bep20': t('payment.channelTypes.usdcBep20'),
+    'usdc-polygon': t('payment.channelTypes.usdcPolygon'),
+    'usdc-aptos': t('payment.channelTypes.usdcAptos'),
+    'usdc-solana': t('payment.channelTypes.usdcSolana'),
+    'usdc-xlayer': t('payment.channelTypes.usdcXlayer'),
+    'usdc-arbitrum': t('payment.channelTypes.usdcArbitrum'),
+    'usdc-base': t('payment.channelTypes.usdcBase'),
     trx: t('payment.channelTypes.trx'),
+    eth: t('payment.channelTypes.eth'),
+    bnb: t('payment.channelTypes.bnb'),
+    balance: t('payment.channelTypes.balance'),
   }
-  if (!value) return '-'
-  return map[value] || value
+  return map[value || ''] || value || '-'
 }
 
 onMounted(() => {
